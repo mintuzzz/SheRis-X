@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Health | SheRise X</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🌸 SheRise X</h1>
+  <p>Structured Digital Empowerment for Women</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="career.html">Career</a>
+  <a href="resume1.html">Resume</a>
+  <a href="finance.html">Freelance</a>
+  <a href="health.html">Health</a>
+  
+</nav>
+
+<section class="detail-page">
+
+  <h1>🩺 Health AI Assistant</h1>
+
+  <p>
+    Talk to our AI-style health assistant and receive basic wellness guidance instantly.
+  </p>
+
+  <div class="chat-box" id="chatBox">
+    <div class="bot-message">
+      Hello 👋 I am your Health Assistant.  
+      Please tell me your health concern.
+    </div>
+  </div>
+
+  <div class="chat-input-area">
+    <input type="text" id="userInput" placeholder="Type your health issue here..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <br>
+
+  <button class="emergency-btn" onclick="showEmergency()">
+    🚨 Emergency Support
+  </button>
+
+  <p class="disclaimer">
+    ⚠ This tool provides general guidance only. 
+    For medical emergencies or serious conditions, please consult a qualified healthcare professional.
+  </p>
+
+</section>
+
+<footer>
+  © 2026 SheRise X
+</footer>
+
+<script>
+function sendMessage() {
+  var input = document.getElementById("userInput");
+  var chatBox = document.getElementById("chatBox");
+  var userText = input.value.toLowerCase().trim();
+
+  if(userText === "") return;
+
+  chatBox.innerHTML += "<div class='user-message'>" + input.value + "</div>";
+
+  var botReply = "";
+
+  // Stress & Anxiety
+  if(userText.includes("stress") || 
+     userText.includes("stressed") ||
+     userText.includes("anxiety") ||
+     userText.includes("tension") ||
+     userText.includes("overthinking")) {
+
+    botReply = "🧠 It sounds like stress. Try deep breathing, short walks, journaling, and limiting screen time. Talking to someone you trust also helps.";
+
+  }
+
+  // Fatigue / Low energy
+  else if(userText.includes("tired") || 
+          userText.includes("fatigue") ||
+          userText.includes("no energy") ||
+          userText.includes("weak")) {
+
+    botReply = "⚡ You may need better rest and nutrition. Sleep 7-8 hours, drink water, and eat iron-rich foods like spinach and nuts.";
+
+  }
+
+  // Period issues
+  else if(userText.includes("period") ||
+          userText.includes("cramp") ||
+          userText.includes("menstrual") ||
+          userText.includes("cycle")) {
+
+    botReply = "🌸 For menstrual discomfort, use a heat pad, stay hydrated, and avoid excessive caffeine. If pain is severe or irregular, consult a gynecologist.";
+
+  }
+
+  // Headache
+  else if(userText.includes("headache") ||
+          userText.includes("migraine")) {
+
+    botReply = "💊 Rest in a quiet room, drink water, and reduce screen time. If headaches are frequent or severe, seek medical advice.";
+
+  }
+
+  // Weight / fitness
+  else if(userText.includes("weight") ||
+          userText.includes("fitness") ||
+          userText.includes("lose weight") ||
+          userText.includes("exercise")) {
+
+    botReply = "🏃 Start with 20–30 minutes walking daily, balanced meals, and avoid crash dieting. Consistency is key.";
+
+  }
+
+  else {
+    botReply = "Can you please explain your symptoms a little more? I will try to guide you.";
+  }
+
+  setTimeout(function() {
+    chatBox.innerHTML += "<div class='bot-message'>" + botReply + "</div>";
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }, 500);
+
+  input.value = "";
+}
+</script>
+
+</body>
+</html>  

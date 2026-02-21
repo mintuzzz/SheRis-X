@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard - SheRise X</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>🌸 SheRise X Dashboard</h1>
+<button onclick="quickHide()" style="float:right;">Quick Hide</button>
+</header>
+
+<nav>
+<a href="career.html">Career</a>
+<a href="resume1.html">Resume</a>
+<a href="finance.html">Finance</a>
+<a href="health.html">Health</a>
+<a href="support.html">Support</a>
+</nav>
+
+<section>
+<div class="container">
+
+<div class="card">
+<h2 id="welcomeUser"></h2>
+</div>
+
+<div class="card">
+<h3>AI Confidence Meter</h3>
+<div style="background:#ddd; border-radius:20px;">
+<div id="confidenceBar" 
+style="height:20px; width:0%; background:#8e44ad; border-radius:20px;"></div>
+</div>
+<p id="confidenceText"></p>
+<button onclick="calculateConfidence()">Check Confidence</button>
+</div>
+
+</div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
